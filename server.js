@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const router = require("./src/controllers");
 const morgan = require('morgan');
 const http = require('http');
+var mongo = require("./src/db/mongo");
 
 const app = express();
 
@@ -14,13 +15,17 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-/** RULES OF OUR API */
+/** RULES OF OUR API 
+ * seting the CORS policy
+ * set the CORS headers
+ * set the allowed CORS method headers
+*/
 app.use((req, res, next) => {
-    // set the CORS policy
+    
     res.header('Access-Control-Allow-Origin', '*');
-    // set the CORS headers
+    
     res.header('Access-Control-Allow-Headers', 'origin, X-Requested-With,Content-Type,Accept, Authorization');
-    // set the CORS method headers
+    
     if (req.method === 'OPTIONS') {
         res.header('Access-Control-Allow-Methods', 'GET PATCH DELETE POST');
         return res.status(200).json({});
@@ -30,13 +35,13 @@ app.use((req, res, next) => {
 
 /** LOG REQUESTS */
 const logRequestCalls = (req, res, next) => {
-    console.info(`${req.method} ${req.url}`)
-
+    
+    console.info(`${req.method} ${req.url}`);
     res.on('finish', () => {
         console.info(`${res.statusCode} ${res.statusMessage}; ${res.get('Content-Length') || 0}b sent`);
     });
 
-    next()
+    next();
 }
 
 app.use(logRequestCalls);

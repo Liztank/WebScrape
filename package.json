@@ -11,15 +11,17 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "puppeteer": "^10.4.0"
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.7",
+    "node-cron": "^3.0.0",
+    "puppeteer": "^10.4.0",
+    "sqlite": "3"
   },
   "devDependencies": {
     "axios": "^0.21.4",
     "dotenv": "^10.0.0",
-    
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12"
-    
   },
-  "type": "module"
+  "type": "commonjs"
 }

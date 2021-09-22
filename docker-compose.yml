@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  client:
+    container_name: flight-info
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/src'
+      - '/node_modules'
+    ports:
+      - 9081:9081/tcp
+    environment:
+      - CHOKIDAR_USEPOLLING=true

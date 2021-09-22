@@ -1,37 +1,27 @@
+const  scrape  = require("./../services/scrapeService");
 const weather  = require("./../services/weatherService");
 
 
-const getTemperature = async (req, res, next) => {
-    const destination = req.params.destination;
-    let temp;
+const getFlightInfo = async(req, res, next) =>{
     try {
-        temp = await weather.temperature(destination);
-
-        if (temp)
-         {
-            res.status(200).json({
-                message: "success",
-                data: temp
-            });
-        }else{
-            res.status(400).json({
-                message: "error",
-                data: temp
-            });
-        }
-
-
+     scrape.getFlight().then(data=>{
+        res.status(200).json({
+        message:"succesfful",
+        data: data
+    });
+     });
+    
     } catch (error) {
         res.status(400).json({
-            error: error.message
-        });
+        message:"failed",
+        data: error
+    });
     }
-
-
-}
+    
+};
 
 module.exports = {
-    getTemperature
+    getFlightInfo
 };
 
 

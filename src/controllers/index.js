@@ -1,10 +1,11 @@
 const express = require("express");
-const temp = require("./scrapeController");
+const scrapeService = require("./scrapeController");
 
 const router = express.Router();
 
 
-router.get("/scrape/:destination", temp.getTemperature);
+// router.get("/scrape/:destination", scrapeService.getTemperature);
+router.get("/scrape/flight-info", scrapeService.getFlightInfo);
 
 
 module.exports = router;

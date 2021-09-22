@@ -2,7 +2,7 @@ var env = require("./../config/envConfig");
 var axios = require("axios") ;
 
 
-    async function temperature (destination){
+     const temperature = async(destination) =>{
 
         var url = env.OPEN_WEATHER_MAP_URL + `?q=${destination}&units=${env.OPEN_WEATHER_MAP_UNITS}&appid=${env.OPEN_WEATHER_MAP_API_KEY}`;
         var options = {
@@ -14,7 +14,10 @@ var axios = require("axios") ;
            var weatherPayload = await axios(options);
            var temptObj = weatherPayload.data.main;
            var note = temperatureNote(parseFloat(temptObj.temp));
-        return note;
+        return {
+            temperature: temptObj.temp,
+            note: note
+        };
 
     }
 
