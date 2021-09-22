@@ -3,7 +3,8 @@ const dotenv = require("dotenv");
 const router = require("./src/controllers");
 const morgan = require('morgan');
 const http = require('http');
-var mongo = require("./src/db/mongo");
+ require("./src/db/mongo");
+ require('./src/services/cronService');
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-/** RULES OF OUR API 
+/** API RULES 
  * seting the CORS policy
  * set the CORS headers
  * set the allowed CORS method headers
