@@ -1,0 +1,44 @@
+Arguments: 
+  /Users/user/.nvm/versions/node/v12.13.0/bin/node /Users/user/.nvm/versions/node/v11.14.0/bin/yarn add express puppeteer axios -D morgan nodemon dotenv
+
+PATH: 
+  /Users/user/.nvm/versions/node/v12.13.0/bin:/Users/user/.nvm/versions/node/v11.14.0/bin:/Applications/XAMPP/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/anaconda3/bin:/opt/anaconda3/condabin:/Users/user/.nvm/versions/node/v11.14.0/bin:/Applications/XAMPP/bin:/usr/local/mongodb/bin:/usr/local/mongodb/bin:/usr/local/mongodb/bin
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  12.13.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: write EADDRNOTAVAIL
+      at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:87:16)
+      at handleWriteReq (internal/stream_base_commons.js:53:21)
+      at writeGeneric (internal/stream_base_commons.js:139:15)
+      at TLSSocket.Socket._writeGeneric (net.js:770:11)
+      at TLSSocket.Socket._write (net.js:782:8)
+      at doWrite (_stream_writable.js:431:12)
+      at clearBuffer (_stream_writable.js:551:7)
+      at TLSSocket.Writable.uncork (_stream_writable.js:325:7)
+      at ClientRequest._flushOutput (_http_outgoing.js:808:10)
+      at ClientRequest._flush (_http_outgoing.js:784:16)
+
+npm manifest: 
+  {
+    "name": "webscrape",
+    "version": "1.0.0",
+    "description": "webscrape sample app",
+    "main": "server.js",
+    "repository": "https://github.com/Liztank/WebScrape.git",
+    "author": "Liztank <lizzyladi@hotmail.com>",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

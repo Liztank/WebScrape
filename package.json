@@ -1,0 +1,25 @@
+{
+  "name": "webscrape",
+  "version": "1.0.0",
+  "description": "webscrape sample app",
+  "main": "server.js",
+  "repository": "https://github.com/Liztank/WebScrape.git",
+  "author": "Liztank <lizzyladi@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "puppeteer": "^10.4.0"
+  },
+  "devDependencies": {
+    "axios": "^0.21.4",
+    "dotenv": "^10.0.0",
+    
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12"
+    
+  },
+  "type": "module"
+}
